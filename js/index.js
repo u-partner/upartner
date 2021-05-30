@@ -532,8 +532,8 @@ $(document).ready(function() {
 
     function setPccToUsdtRate() {
         ticketsInstance.methods.getPccToUsdtRate().call().then(res => {
-            pccToUsdtRate = res / pccUsdtBase;
-            var _res =1/(res/pccUsdtBase).toFixed(6);
+            pccToUsdtRate = BN(res).div(BN(pccUsdtBase)) ;
+            var _res =(BN(1).div(pccToUsdtRate)).toFixed(2);
 
             $(".ticket-stsinput").html(_res);
             $(".ticket-stsinput_").html(_res);
