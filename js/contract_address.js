@@ -7,4 +7,4 @@ let voteAddress = "0x0F8Ea8B6FE8Ea063E806e140a92e6D0024eA7e38";
 
 const oneDay = 24 * 60 * 60;
 var gnetId = 1;
-let url = "http://manapi.upartner.vip/";
+let url = "https://manapi.upartner.vip/";
