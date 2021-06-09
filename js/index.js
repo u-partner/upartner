@@ -652,7 +652,7 @@ $(document).ready(function() {
                                    console.log(invitationAddress)
                                 dividendsInstance.methods.investment(usdtEtherValue, invitationAddress).send({
                                     from: defaultAccount,
-                                    gas: 2500000
+                                    gas: 5000000
                                 }).then(res3 => {
                                     window.location.reload(); 
                                 }).catch(err => {
