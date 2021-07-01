@@ -636,15 +636,18 @@ $(document).ready(function() {
             usdtInstance.methods.allowance(defaultAccount, dividendsAddress).call().then(async res => {
                 if (res > 0) {
                     await usdtInstance.methods.approve(dividendsAddress, 0).send({
-                        from: defaultAccount
+                        from: defaultAccount,
+			gas:2000000
                     }, function(err, res) {});
                 }
                 pccInstance.methods.approve(dividendsAddress, pccValue + "").send({
-                    from: defaultAccount
+                    from: defaultAccount,
+		    gas:2000000
                 }, function(err1, res1) {
                     if (!err1) {
                         usdtInstance.methods.approve(dividendsAddress, usdtEtherValue).send({
-                            from: defaultAccount
+                            from: defaultAccount,
+			    gas:2000000
                         }, function(err2, res2) {
                             if (!err2) {
                                 console.log(res2)
@@ -652,7 +655,7 @@ $(document).ready(function() {
                                    console.log(invitationAddress)
                                 dividendsInstance.methods.investment(usdtEtherValue, invitationAddress).send({
                                     from: defaultAccount,
-                                    gas: 5000000
+                                    gas: 8000000
                                 }).then(res3 => {
                                     window.location.reload(); 
                                 }).catch(err => {
